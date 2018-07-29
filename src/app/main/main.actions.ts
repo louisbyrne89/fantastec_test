@@ -24,6 +24,7 @@ export class MainActions {
   ) { }
 
   public initialiseDataStream(): void {
+    // Read JSON file
     this.http.get('./assets/data.json')
     .subscribe((response: Response): void => 
       this.addDataToStore(response)
@@ -32,6 +33,7 @@ export class MainActions {
   }
 
   private addDataToStore(data: Response): void {
+    // Create immutable list of events
     const events = Immutable.List(data["events"].map(
       (event: {[key: string]: string}): IEventStateRecord => {
         return EventStateFactory({
@@ -43,6 +45,7 @@ export class MainActions {
         });
       })
     );
+    // Add data to store
     this.store.dispatch({
       type:MainActions.CREATE_MAIN,
       payload: {

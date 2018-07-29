@@ -1,3 +1,8 @@
+# Help
+
+To run the app you need the angular cli installed. The command is ngServe
+
+
 # Assessment
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.1.

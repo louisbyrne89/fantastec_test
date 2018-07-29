@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { select } from '@angular-redux/store';
 import { Subject } from 'rxjs';
 import * as Immutable from 'immutable';
+import { takeUntil } from 'rxjs/operators';
 
 import { IEventStateRecord } from '../main.state';
 import { MainActions } from '../main.actions';
@@ -19,9 +20,10 @@ interface IEvents {
   templateUrl: './key-events.component.html',
   styleUrls: ['./key-events.component.scss']
 })
-export class KeyEventsComponent implements OnInit {
-  ngUnsubscribe = new Subject()
+export class KeyEventsComponent implements OnInit, OnDestroy {
   @select(['main', 'events']) eventsObs: Observable<Immutable.List<IEventStateRecord>>;
+
+  ngUnsubscribe = new Subject();
   keyEvents: IEventStateRecord[];
   eventTypes: Array<string> = ["goal", "half time", "yellow"]
 
@@ -29,7 +31,10 @@ export class KeyEventsComponent implements OnInit {
 
   ngOnInit() {
     this.eventsObs
-    .subscribe((events: Immutable.List<IEventStateRecord>) => {
+    .pipe(
+      takeUntil(this.ngUnsubscribe)
+    ).subscribe((events: Immutable.List<IEventStateRecord>) => {
+      // Get key events, filtering out the comments
       this.keyEvents = [];
       events.map((event: IEventStateRecord) => {
         if (this.eventTypes.indexOf(event.type) !== -1) {
@@ -46,7 +51,7 @@ export class KeyEventsComponent implements OnInit {
 
   ngOnDestroy() {
     this.ngUnsubscribe.next();
-    this.ngUnsubscribe.complete();
+    this.ngUnsubscribe.unsubscribe();
   }
 
 }

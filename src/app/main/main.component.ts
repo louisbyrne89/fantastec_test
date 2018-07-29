@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { select } from '@angular-redux/store';
 import { IEventStateRecord } from './main.state';
 
@@ -25,5 +25,4 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.mainActions.initialiseDataStream();
   }
-
 }
