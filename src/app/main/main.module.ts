@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http'; 
-import { WavesModule } from 'angular-bootstrap-md';
+import { WavesModule, IconsModule } from 'angular-bootstrap-md';
 
 import { MainComponent } from './main.component';
 import { MainActions } from './main.actions';
@@ -12,7 +12,8 @@ import { ListItemComponent } from './list-item/list-item.component';
   imports: [
     CommonModule,
     HttpClientModule,
-    WavesModule
+    WavesModule,
+    IconsModule
   ],
   declarations: [
     MainComponent,
