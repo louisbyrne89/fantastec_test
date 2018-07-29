@@ -18,4 +18,7 @@
   <p style="text-align: center">
     Attendance: {{ attendanceObs | async }}
   </p>
+  <ul class="list-group">
+    <li *ngFor="let event of (eventsObs | async)" class="list-group-item">{{ event.text }}</li>
+  </ul>
 </div>

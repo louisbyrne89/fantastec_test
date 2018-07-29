@@ -14,6 +14,7 @@ export class MainComponent implements OnInit {
   @select(['main', 'away']) awayObs: Observable<string>;
   @select(['main', 'referee']) refereeObs: Observable<string>;
   @select(['main', 'attendance']) attendanceObs: Observable<string>;
+  @select(['main', 'events']) eventsObs: Observable<string>;
 
   constructor(
     private mainActions: MainActions
