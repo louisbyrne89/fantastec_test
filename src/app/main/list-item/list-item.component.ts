@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-list-item',
   templateUrl: './list-item.component.html',
   styleUrls: ['./list-item.component.scss']
 })
-export class ListItemComponent implements OnInit {
+export class ListItemComponent {
 
   @Input('minute') minute: string;
   @Input('type') type: string;
@@ -13,8 +13,5 @@ export class ListItemComponent implements OnInit {
   @Input('player') player: string;
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

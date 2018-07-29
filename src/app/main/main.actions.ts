@@ -39,6 +39,7 @@ export class MainActions {
           type: event["type"],
           text: event["text"],
           player: event["player"],
+          id: event["id"]
         });
       })
     );

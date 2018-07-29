@@ -7,6 +7,7 @@ import { MainComponent } from './main.component';
 import { MainActions } from './main.actions';
 import { ListItemComponent } from './list-item/list-item.component';
 import { KeyEventsComponent } from './key-events/key-events.component';
+import { IconViewComponent } from './icon-view/icon-view.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { KeyEventsComponent } from './key-events/key-events.component';
   declarations: [
     MainComponent,
     ListItemComponent,
-    KeyEventsComponent
+    KeyEventsComponent,
+    IconViewComponent
   ],
   providers: [
     MainActions,

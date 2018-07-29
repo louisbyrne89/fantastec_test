@@ -21,16 +21,16 @@
   <div class="container">
     <div class="row">
       <div class="col-8">
-        <h4 class="h1 h1-responsive">Live commentary</h4>
+        <h4 class="h4 h4-responsive">Live commentary</h4>
         <ul class="list-group">
           <app-list-item *ngFor="let event of (eventsObs | async)" 
-          [minute]="event.minute" [type]="event.type" [text]="event.text" [player]="event.player"></app-list-item>
+          [minute]="event.minute" [type]="event.type" [text]="event.text"
+          [player]="event.player" [attr.id]="'scroll' + event.id"></app-list-item>
         </ul>
       </div>
       <div class="col-4">
-        <ul class="list-group">
-          <app-key-events></app-key-events>
-        </ul>
+        <h4 class="h4 h4-responsive">Key events</h4>
+        <app-key-events></app-key-events>
       </div>
     </div>
   </div>

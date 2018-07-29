@@ -7,6 +7,7 @@ interface IEventState {
     type: string;
     text: string;
     player: string;
+    id: string;
 }
 
 const Events: IEventState = {
@@ -14,6 +15,7 @@ const Events: IEventState = {
     type: null,
     text: null,
     player: null,
+    id: null,
 };
 
 export const EventStateFactory = makeTypedFactory<IEventState, IEventStateRecord>(Events);

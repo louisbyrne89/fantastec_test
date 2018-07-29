@@ -1,3 +1,23 @@
-<p>
-  key-events works!
-</p>
+<ul class="list-group">
+  <div *ngFor="let event of keyEvents" (click)="scroll(event.id)">
+    <div class="row">
+      <div class="col">
+        <app-icon-view [type]="event.type"></app-icon-view>
+      </div>
+      <div class="col">
+          <div *ngIf="event.type !== 'half time'">
+            <span *ngIf="event.minute <= 45">{{ event.type }} '{{ event.minute }}</span>
+            <span *ngIf="event.minute > 45">{{ event.type }} '45 + {{ event.minute - 45 }}</span>
+          </div>
+          <div *ngIf="event.type === 'half time'">
+            <span *ngIf="event.minute <= 45">{{ event.type }}</span>
+            <span *ngIf="event.minute > 45">{{ event.type }}</span>
+          </div>
+      </div>
+      <div class="col">
+        {{ event.player}}
+      </div>
+    </div>
+    <br>
+  </div>
+</ul>

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { MainActions } from './main.actions';
 import { Observable } from 'rxjs';
 import { select } from '@angular-redux/store';
+import { IEventStateRecord } from './main.state';
 
+import { MainActions } from './main.actions';
+import * as Immutable from 'immutable';
 
 @Component({
   selector: 'app-main',
@@ -14,7 +16,7 @@ export class MainComponent implements OnInit {
   @select(['main', 'away']) awayObs: Observable<string>;
   @select(['main', 'referee']) refereeObs: Observable<string>;
   @select(['main', 'attendance']) attendanceObs: Observable<string>;
-  @select(['main', 'events']) eventsObs: Observable<string>;
+  @select(['main', 'events']) eventsObs: Observable<Immutable.List<IEventStateRecord>>;
 
   constructor(
     private mainActions: MainActions
