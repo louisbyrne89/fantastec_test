@@ -1,6 +1,6 @@
 # Help
 
-To run the app you need the angular cli installed. The command is ngServe
+To run the app you need the angular cli installed. The command is ng serve
 
 
 # Assessment
