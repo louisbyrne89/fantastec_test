@@ -1,6 +1,6 @@
 # Help
 
-To run the app you need the angular cli installed. The command is ngServe
+To serve the app you need the angular cli installed. The command is ng serve. Then navigate to `http://localhost:4200/`
 
 
 # Assessment

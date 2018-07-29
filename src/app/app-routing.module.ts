@@ -4,6 +4,10 @@ import { MainComponent } from './main/main.component';
 
 
 const routes: Routes = [
+  { path: '',
+    redirectTo: '/main',
+    pathMatch: 'full'
+  },
   {
     path: 'main',
     component: MainComponent,
