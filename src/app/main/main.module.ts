@@ -5,6 +5,7 @@ import { WavesModule } from 'angular-bootstrap-md';
 
 import { MainComponent } from './main.component';
 import { MainActions } from './main.actions';
+import { ListItemComponent } from './list-item/list-item.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { MainActions } from './main.actions';
     WavesModule
   ],
   declarations: [
-    MainComponent
+    MainComponent,
+    ListItemComponent
   ],
   providers: [
     MainActions,
