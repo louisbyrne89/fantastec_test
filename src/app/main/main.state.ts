@@ -2,23 +2,23 @@ import { makeTypedFactory, TypedRecord } from 'typed-immutable-record';
 import * as Immutable from 'immutable';
 
 
-interface IEventsState {
-    minute: number;
+interface IEventState {
+    minute: string;
     type: string;
     text: string;
     player: string;
 }
 
-const Events: IEventsState = {
+const Events: IEventState = {
     minute: null,
     type: null,
     text: null,
     player: null,
 };
 
-export const EventsStateFactory = makeTypedFactory<IEventsState, IEventsStateRecord>(Events);
+export const EventStateFactory = makeTypedFactory<IEventState, IEventStateRecord>(Events);
 
-export interface IEventsStateRecord extends TypedRecord<IEventsStateRecord>, IEventsState { };
+export interface IEventStateRecord extends TypedRecord<IEventStateRecord>, IEventState { };
 
 
 interface IMainState {
@@ -26,7 +26,7 @@ interface IMainState {
     away: string;
     attendance: string;
     referee: string;
-    events: Immutable.List<IEventsStateRecord>;
+    events: Immutable.List<IEventStateRecord>;
 }
 
 const Main: IMainState = {

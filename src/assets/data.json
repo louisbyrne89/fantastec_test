@@ -1,5 +1,5 @@
-{   "Home team": "Manchester United",
-    "Away team": "Newcastle United",
+{   "Home": "Manchester United",
+    "Away": "Newcastle United",
     "Attendance": "69129",
     "Referee": "That Collini bloke",
     "events": [

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MainActions } from './main.actions';
+import { Observable } from 'rxjs';
+import { select } from '@angular-redux/store';
+
 
 @Component({
   selector: 'app-main',
@@ -7,6 +10,10 @@ import { MainActions } from './main.actions';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+  @select(['main', 'home']) homeObs: Observable<string>;
+  @select(['main', 'away']) awayObs: Observable<string>;
+  @select(['main', 'referee']) refereObs: Observable<string>;
+  @select(['main', 'attendance']) attendanceObs: Observable<string>;
 
   constructor(
     private mainActions: MainActions
