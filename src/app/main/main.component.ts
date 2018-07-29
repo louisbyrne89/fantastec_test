@@ -12,7 +12,7 @@ import { select } from '@angular-redux/store';
 export class MainComponent implements OnInit {
   @select(['main', 'home']) homeObs: Observable<string>;
   @select(['main', 'away']) awayObs: Observable<string>;
-  @select(['main', 'referee']) refereObs: Observable<string>;
+  @select(['main', 'referee']) refereeObs: Observable<string>;
   @select(['main', 'attendance']) attendanceObs: Observable<string>;
 
   constructor(
