@@ -18,7 +18,7 @@
         {
             "minute": 14,
             "type": "goal",
-            "text": "And its two nil Newcastle. Corner in by Ritchie and Lascelles does the rest",
+            "text": "And its two nil Newcastle. Corner in by Ritchie and Lascelles does the rest.",
             "player": "Lascelles"
         },
         {
@@ -30,13 +30,13 @@
         {
             "minute": 29,
             "type": "yellow",
-            "text": "Well that was a rather stupid foul",
+            "text": "Well that was a rather stupid foul. Pogba, yellow card.",
             "player": "Pogba"
         },
         {
             "minute": 31,
             "type": "comment",
-            "text": "Manchester United need to regain their composure now or this could get embarrassing",
+            "text": "Manchester United need to regain their composure now or this could get embarrassing.",
             "player": null
         },
         {

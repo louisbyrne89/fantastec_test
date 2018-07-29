@@ -6,6 +6,7 @@ import { WavesModule, IconsModule } from 'angular-bootstrap-md';
 import { MainComponent } from './main.component';
 import { MainActions } from './main.actions';
 import { ListItemComponent } from './list-item/list-item.component';
+import { KeyEventsComponent } from './key-events/key-events.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ListItemComponent } from './list-item/list-item.component';
   ],
   declarations: [
     MainComponent,
-    ListItemComponent
+    ListItemComponent,
+    KeyEventsComponent
   ],
   providers: [
     MainActions,
