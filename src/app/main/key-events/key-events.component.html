@@ -1,23 +1,26 @@
 <ul class="list-group">
   <div *ngFor="let event of keyEvents" (click)="scroll(event.id)">
-    <div class="row">
-      <div class="col">
-        <app-icon-view [type]="event.type"></app-icon-view>
+      <div class="view overlay">
+          <div class="row">
+            <div class="col">
+            <app-icon-view [type]="event.type"></app-icon-view>
+            </div>
+            <div class="col">
+                <div *ngIf="event.type !== 'half time'">
+                  <span *ngIf="event.minute <= 45">{{ event.type }} '{{ event.minute }}</span>
+                  <span *ngIf="event.minute > 45">{{ event.type }} '45 + {{ event.minute - 45 }}</span>
+                </div>
+                <div *ngIf="event.type === 'half time'">
+                  <span *ngIf="event.minute <= 45">{{ event.type }}</span>
+                  <span *ngIf="event.minute > 45">{{ event.type }}</span>
+                </div>
+            </div>
+            <div class="col">
+              {{ event.player}}
+            </div>
+          </div>  
+        <div class="mask flex-center rgba-green-slight mouse-pointer">
+        </div>
       </div>
-      <div class="col">
-          <div *ngIf="event.type !== 'half time'">
-            <span *ngIf="event.minute <= 45">{{ event.type }} '{{ event.minute }}</span>
-            <span *ngIf="event.minute > 45">{{ event.type }} '45 + {{ event.minute - 45 }}</span>
-          </div>
-          <div *ngIf="event.type === 'half time'">
-            <span *ngIf="event.minute <= 45">{{ event.type }}</span>
-            <span *ngIf="event.minute > 45">{{ event.type }}</span>
-          </div>
-      </div>
-      <div class="col">
-        {{ event.player}}
-      </div>
-    </div>
-    <br>
   </div>
 </ul>
